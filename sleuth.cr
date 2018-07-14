@@ -57,9 +57,9 @@ class Info
         process = Process.new(
             command,
             shell: true,
-            input: true,
-            output: nil,
-            error: true,
+            input: Process::Redirect::Inherit,
+            output: Process::Redirect::Inherit,
+            error: Process::Redirect::Inherit,
             chdir: @dir,
         )
         output = process.output.gets_to_end
